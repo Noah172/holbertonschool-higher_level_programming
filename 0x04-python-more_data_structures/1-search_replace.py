@@ -4,5 +4,5 @@ def search_replace(my_list, search, replace):
     rlist = my_list[:]
     for i in range(0, len(rlist)):
         if rlist[i] == search:
-           rlist[i] = replace
+            rlist[i] = replace
     return rlist
