@@ -23,4 +23,3 @@ def roman_to_int(roman_string):
         else:
             result += listado[i]
     return result
-
