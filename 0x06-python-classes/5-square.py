@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-def __init__(self, size=0):
-    """ Size definition. """
-    self.__size = size
+""" This class defines a Square it a size."""
+
+
+class Square:
+    def __init__(self, size=0):
+        """ Size definition. """
+        self.__size = size
 
     def area(self):
         """ the area of the square """
