@@ -1,5 +1,6 @@
-#!/usr/bin/pyrthon3
-""" This class defines a Square size."""
+#!/usr/bin/python3
+
+""" This class defines a Square it a size."""
 
 
 class Square:
@@ -7,10 +8,6 @@ class Square:
     """ A Square Class, has a private instance attribute: Size """
 
     def __init__(self, size=0):
-        """ Size definition
-
-        Args:
-            size (int): Private instance attribute: size.
-        """
+        """ Size definition. """
         self.__size = size
         pass
