@@ -12,5 +12,5 @@ class Square:
         Args:
             size (int): Private instance attribute: size.
         """
-        self.__size=size
+        self.__size = size
         pass
