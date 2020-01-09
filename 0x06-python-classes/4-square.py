@@ -9,7 +9,7 @@ class Square:
     def __init__(self, size=0):
         """ Size definition. """
         self.__size = size
-    
+
     def area(self):
         """ the area of the square """
         return self.__size ** 2
@@ -17,7 +17,7 @@ class Square:
     @property
     def size(self):
         return self.__size
-    
+
     @size.setter
     def size(self, val):
         if not isinstance(val, int):
