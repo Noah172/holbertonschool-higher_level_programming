@@ -1,5 +1,6 @@
 #!/usr/bin/pyrthon3
-""" This class defines a Square it a size."""
+""" This class defines a Square size."""
+
 
 class Square:
 
