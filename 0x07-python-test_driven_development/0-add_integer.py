@@ -6,11 +6,9 @@
 def add_integer(a, b=98):
      # return the addition of the two integuers
     if not isinstance(a, int) and not isinstance(a, float):
-        print("a must be an integer", end="")
-        raise TypeError
+        raise TypeError("a must be an integer")
     if not isinstance(b, int) and not isinstance(b, float):
-        print("b must be an integer", end="")
-        raise TypeError
+        raise TypeError("b must be an integer")
     if isinstance(a, float):
         a = int(a)
     if isinstance(b, float):
