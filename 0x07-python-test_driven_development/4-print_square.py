@@ -1,15 +1,19 @@
 #!/usr/bin/python3
+"""Write a function that prints a square with the character #"""
+
+
 def print_square(size):
-    if isinstance(size, float):
-        print("size must be an integer", end="")
-        raise TypeError
-    if size < 0:
-        print("size must be >= 0", end="")
-        raise TypeError
+    """ print square
+        Args:
+            size (int):
+        Raises:
+            TypeError: size must be an integer
+            ValueError: size must be >= 0
+    """
     if not isinstance(size, int):
-        print("size must be an integer", end="")
-        raise ValueError
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
     for i in range(size):
-        for j in range(size):
-            print("#", end="")
+        [print("#", end="") for j in range(size)]
         print("")

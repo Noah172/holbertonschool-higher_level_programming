@@ -23,6 +23,10 @@ Now use it:
     >>> add_integer(-5)
     93
 
+    >>> add_integer("school", 4)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
     >>> add_integer(float("test"))
     Traceback (most recent call last):
     ValueError: could not convert string to float: 'test'
