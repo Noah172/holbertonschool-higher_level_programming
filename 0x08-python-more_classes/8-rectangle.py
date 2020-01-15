@@ -5,6 +5,7 @@ class Rectangle:
     """
     number_of_instances = 0
     print_symbol = "#"
+
     def __init__(self, height=0, width=0):
         """
         using it sefl
@@ -22,7 +23,7 @@ class Rectangle:
     def perimeter(self):
         P = (self.__width * 2) + (self.__height * 2)
         return P
-    
+
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ("")
@@ -65,11 +66,11 @@ class Rectangle:
     @property
     def height(self):
         return self.__height
-    
+
     @property
     def width(self):
         return self.__width
-    
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
