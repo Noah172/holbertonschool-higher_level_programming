@@ -87,10 +87,11 @@ class Rectangle(Base):
         return ar
 
     def display(self):
-        """prints in stdout the Rectangle"""
-        print(("\n" * self.__y) +
-              "\n".join(((" " * self.__x) + ("#" * self.__width))
-                        for i in range(self.__height)))
+        "Rectangle Display"
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end="")
+            print()
 
     def __str__(self):
         """should print, and str() should return"""
