@@ -80,3 +80,55 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be > 0")
         self.__y = value
+
+    def area(self):
+        """returns the area value of the Rectangle"""
+        return self.__width * self.__height
+
+    def display(self):
+        """prints in stdout the Rectangle"""
+        print(("\n" * self.__y) +
+              "\n".join(((" " * self.__x) + ("#" * self.__width))
+                        for i in range(self.__height)))
+
+    def __str__(self):
+        """should print, and str() should return"""
+        string = "[" + str(self.__class__.__name__) + "] "
+        string += "(" + str(self.id) + ") " + \
+            str(self.__x) + "/" + str(self.__y) + " - " + \
+            str(self.__width) + "/" + str(self.__height)
+        return string
+
+    def update(self, *args, **kwargs):
+        """update"""
+        for i, j in enumerate(args):
+            if i == 0:
+                self.id = j
+            elif i == 1:
+                self.width = j
+            elif i == 2:
+                self.height = j
+            elif i == 3:
+                self.x = j
+            elif i == 4:
+                self.y = j
+        if "id" in kwargs:
+            self.id = kwargs["id"]
+        if "width" in kwargs:
+            self.width = kwargs["width"]
+        if "height" in kwargs:
+            self.height = kwargs["height"]
+        if "x" in kwargs:
+            self.x = kwargs["x"]
+        if "y" in kwargs:
+            self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """to_dictionary"""
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return di
