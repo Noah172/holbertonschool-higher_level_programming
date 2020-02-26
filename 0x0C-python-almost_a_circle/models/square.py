@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-""" Square class """
+
+"""
+is a Square class
+"""
+
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """Write the class Square that inherits from Rectangle"""
-
+    """is a square"""
     def __init__(self, size, x=0, y=0, id=None):
-        """"inicialization constructor"""
+        """init a square"""
         super().__init__(size, size, x, y, id)
         self.size = size
 
@@ -27,38 +31,39 @@ class Square(Rectangle):
         self.__width = value
 
     def __str__(self):
-        """should print, and str() should return"""
-        st = "[" + str(self.__class__.__name__) + "] "
-        st += "(" + str(self.id) + ") " + \
-            str(self.x) + "/" + str(self.y) + " - " + \
-            str(self.width)
-        return st
+        """str function"""
+        w = self.__width
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, w)
 
     def update(self, *args, **kwargs):
-        """ update test"""
-        for i, j in enumerate(args):
-            if i == 0:
-                self.id = j
-            elif i == 1:
-                self.size = j
-            elif i == 2:
-                self.x = j
-            elif i == 3:
-                self.y = j
-        if "id" in kwargs:
-            self.id = kwargs["id"]
-        if "size" in kwargs:
-            self.size = kwargs["size"]
-        if "x" in kwargs:
-            self.x = kwargs["x"]
-        if "y" in kwargs:
-            self.y = kwargs["y"]
+        """str function"""
+        i = 0
+        for arg in args:
+            i += 1
+            if i == 1:
+                self.id = arg
+            if i == 2:
+                self.__width = arg
+            if i == 3:
+                self.x = arg
+            if i == 4:
+                self.y = arg
+
+        for key, value in kwargs.items():
+            if key == "id":
+                self.id = value
+            if key == "size":
+                self.__width = value
+            if key == "x":
+                self.x = value
+            if key == "y":
+                self.y = value
 
     def to_dictionary(self):
-        """ dictionary test"""
-        my_dic = {}
-        my_dic["id"] = self.id
-        my_dic["size"] = self.size
-        my_dic["x"] = self.x
-        my_dic["y"] = self.y
-        return my_dic
+        """to dictionary function"""
+        dictionary = {}
+        dictionary["id"] = self.id
+        dictionary["size"] = self.width
+        dictionary["x"] = self.x
+        dictionary["y"] = self.y
+        return dictionary
