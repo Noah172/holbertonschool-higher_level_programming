@@ -17,7 +17,8 @@ if __name__ == "__main__":
     passwd = argv[2]
     db = argv[3]
 
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(user, passwd, db))
+    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(user,
+                        passwd, db))
     session = sessionmaker(bind=eng)
     States = session().query(State).all()
 
