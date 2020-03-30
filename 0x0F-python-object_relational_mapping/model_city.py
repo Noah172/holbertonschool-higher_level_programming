@@ -13,10 +13,11 @@ class City(Base):
     """====================================================================="""
     """=================== INIT & CLASS VARIABLES =========================="""
     """====================================================================="""
-
     __tablename__ = 'cities'
 
-    id = Column(Integer, primary_key=True, nullable=False,
-                autoincrement="auto", unique=True)
+    id = Column(Integer, autoincrement="auto", unique=True,
+                primary_key=True, nullable=False)
 
-    name = Column(String(128), unique=True)
+    name = Column(String(128), nullable=False)
+
+    state_id = Column(Integer, ForeignKey('states_id'), nullable=False)
