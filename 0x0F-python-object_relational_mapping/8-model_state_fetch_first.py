@@ -15,13 +15,14 @@ if __name__ == "__main__":
     user = argv[1]
     passwd = argv[2]
     db = argv[3]
+
     eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(user,
                         passwd, db))
+
     session = sessionmaker(bind=eng)
-    eng = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(user,
-                        passwd, db))
     States = session().query(State).first()
-    if State:
-       print("{}: {}".format(State.id, State.name))
+
+    if States:
+       print("{}: {}".format(States.id, States.name))
     else:
        print("Nothing")
