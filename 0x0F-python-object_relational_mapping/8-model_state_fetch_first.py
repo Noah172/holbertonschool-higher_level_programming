@@ -23,6 +23,6 @@ if __name__ == "__main__":
     States = session().query(State).first()
 
     if States:
-       print("{}: {}".format(States.id, States.name))
+        print("{}: {}".format(States.id, States.name))
     else:
-       print("Nothing")
+        print("Nothing")
