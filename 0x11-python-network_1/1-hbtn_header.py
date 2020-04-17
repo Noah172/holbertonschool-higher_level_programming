@@ -1,8 +1,9 @@
-#/usr/bin/python3
-import urllib.request
+#!/usr/bin/python3
 from sys import argv
+from urllib.request import urlopen
 
-if __name__ == '__main__':
-    with urllib.request.urlopen(argv[1]) as i:
-        pag = i.info()
-        print(pag['X-Request-Id'])
+if __name__ == "__main__":
+    url = argv[1]
+    with urlopen(url) as response:
+        pag = response.headers.get("X-request-Id")
+        print(pag)
